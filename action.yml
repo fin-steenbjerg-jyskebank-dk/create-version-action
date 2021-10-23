@@ -1,9 +1,6 @@
 name: 'imprint version'
-description: 'imprints the vesion and build time into source file'
+description: 'imprints the version and build time into a source file'
 inputs:
-  version:
-    description: 'The version number to imprint'
-    required: true
   file:
     description: 'the file to imprint into'
     required: true
@@ -14,5 +11,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.version }}
     - ${{ inputs.file }}

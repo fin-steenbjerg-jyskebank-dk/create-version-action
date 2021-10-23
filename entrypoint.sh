@@ -1,12 +1,10 @@
-#!/bin/sh -l
+#!/bin/sh
+[ -f "$1" ] || { echo "$1 NOT FOUND" ; exit 1 ;}
 time=$(date)
-echo "Imprinting version $1 to file $2 at" $time
-pwd
-ls -lrt
-
-[ -f "$2" ] || { echo "$2 NOT FOUND" ; exit 1 ;}
-
-sed -i "s/##VERSION##/$1/g" "$2"
-sed -i "s/##BUILD_TIME##/$time/g" "$2"
+version=$(echo $GITHUB_REF | cut -d / -f 3)
+echo "imprinting version $version, git sha $GITHUB_SHA and time $time"
+sed -i "s/##VERSION##/$version/g" "$1"
+sed -i "s/##BUILD_TIME##/$time/g" "$1"
+sed -i "s/##BUILD_TIME##/$GITHUB_SHA/g" "$1"
 
 echo "::set-output name=time::$time"
