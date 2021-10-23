@@ -1,4 +1,4 @@
-name: 'imprint version
+name: 'imprint version'
 description: 'imprints the vesion and build time into source file'
 inputs:
   version:
