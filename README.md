@@ -8,4 +8,4 @@ The text resplaced in the source file are:
 * ##BUILD_TIME## is replace by the current time
 * ##SHA## is replace with current GIT sha 
 
-
+The version and sha is returned as an output parameter.

@@ -5,8 +5,10 @@ inputs:
     description: 'the file to imprint into'
     required: true
 outputs:
-  time:
-    description: 'The time of the operation'
+  version:
+    description: 'The version being used'
+  sha:
+    description: 'The github sha value'
 runs:
   using: 'docker'
   image: 'Dockerfile'

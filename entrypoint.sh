@@ -7,4 +7,5 @@ sed -i "s/##VERSION##/$version/g" "$1"
 sed -i "s/##BUILD_TIME##/$time/g" "$1"
 sed -i "s/##SHA##/$GITHUB_SHA/g" "$1"
 
-echo "::set-output name=time::$time"
+echo "::set-output name=version::$version"
+echo "::set-output name=sha::$GTIHUB_SHA"
