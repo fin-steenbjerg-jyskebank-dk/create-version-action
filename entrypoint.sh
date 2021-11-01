@@ -1,4 +1,6 @@
 #!/bin/sh
+set -x
+
 [ -f "$1" ] || { echo "$1 NOT FOUND" ; exit 1 ;}
 time=$(date)
 version=$(echo $GITHUB_REF | cut -d / -f 3)
