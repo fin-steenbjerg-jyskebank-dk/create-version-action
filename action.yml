@@ -4,6 +4,9 @@ inputs:
   file:
     description: 'the file to imprint into'
     required: true
+  os:
+    description: 'The os being used'
+    required: true
 outputs:
   version:
     description: 'The version being used'
@@ -14,3 +17,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.file }}
+    - ${{ inputs.os }}
